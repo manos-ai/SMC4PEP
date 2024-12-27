@@ -1,0 +1,11 @@
+# sample PRISM properties
+
+# check that the end state is always reached (no deadlocks)
+Pmin = ? [F "end_state" = true]
+
+# get the process reward
+R = ?
+
+# smc4pep also outputs an excel mapping the process nodes to their corresponding
+# prism states. In that way, the user can define additional properties and verify
+# them in prism.

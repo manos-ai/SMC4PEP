@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta title="SMC4PEP" />
+    <title>SMC4PEP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  
+  <!-- handle flask messages -->
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-warning alert-dismissible fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              {{message}}
+              </div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+  
+  <body>
+  <div align="center">
+    <h1>SMC4PEP converter</h1>
+	<br>
+	<p align="left">SMC4PEP is a tool for converting a business process, expressed in the BPMN format, into an equivalent Markov Decision Process
+	(MDP) expressed in the language of the PRISM model checker. The generated MDP file can then be used for model checking the process
+	and verifying its properties. To learn more about it, click <a href="https://github.com/Hassan-Hage/SMC4PEP.git"> here. </a> </p>
+	
+	<img src="/static/images/SMC4PEP_fig.PNG" alt="SMC4PEP description (figure)"/>
+	<br>
+	
+	<h2>Select BPMN file (xml)</h2>
+	
+    <form
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" value="Select BPMN file (xml)..."/>
+      <input type="submit" value="Convert to PRISM" class="btn btn-success"/>
+    </form>
+  </div>
+  </body>
+</html>
