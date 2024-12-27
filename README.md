@@ -48,7 +48,7 @@ To run one of the examples please apply the following steps (for the web App):
 
 9. Now properties of interest can be verified
 
-##Verifying properties in PRISM
+## Verifying properties in PRISM
 
 We have included some standard properties in `src/properties/sample_properties.txt`. 
 
